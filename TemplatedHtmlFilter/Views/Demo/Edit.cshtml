@@ -1,0 +1,31 @@
+﻿@model TemplatedHtmlFilter.Models.Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    <div>
+        @Html.DisplayName("Id") - @Html.Editor("Id")
+        <br />
+        @Html.DisplayName("dob") - @Html.EditorFor(x => x.dob)
+        <br />
+        @Html.DisplayName("dobtime") - @Html.EditorFor(x => x.dobtime)
+        <br /><hr />
+        @Html.EditorForModel()
+    </div>
+    <div>
+        @using (Html.BeginForm("MyForm"))
+        {
+            @Html.EditorForModel()
+            <input type="submit" value="Submit" />
+        }
+    </div>
+</body>
+</html>

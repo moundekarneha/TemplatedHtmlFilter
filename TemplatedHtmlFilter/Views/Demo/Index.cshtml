@@ -1,0 +1,43 @@
+﻿@using TemplatedHtmlFilter.Models
+@model Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Html.DisplayName("Name")<br />
+        @Html.DisplayNameFor(sx => sx.name)<br />
+        @Html.DisplayNameFor(sx => sx.email)<br />
+        @Html.DisplayNameFor(sx => sx.dob)<br />
+        <hr />
+        @Html.DisplayText("Name")<br />
+        @Html.DisplayTextFor(x => x.name)<br />
+
+        <hr />
+        @Html.Display("Name")<br />
+        @Html.DisplayFor(x => x.name)
+
+        <hr />
+        @Html.DisplayForModel()
+       
+
+    </div>
+    <style>
+        .display-field{
+            background-color:aqua;
+        }
+        .display-label {
+            background-color: red;
+        }
+
+    </style>
+</body>
+</html>
